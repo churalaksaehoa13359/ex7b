@@ -1,15 +1,19 @@
 function checkSID() {
   let sid = (document.getElementById("sid").value).trim();
-  if (sid.length == 10) {
-    return true;
-  } else {
+
+  // ต้องเป็นตัวเลข 10 หลักเท่านั้น
+  if (!/^[0-9]{10}$/.test(sid)) {
     return false;
+  } else {
+    return true;
   }
 }
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
+
+  // ต้องเป็นตัวเลข และอยู่ระหว่าง 1 ถึง 10 เท่านั้น
+  if (!/^[0-9]+$/.test(candi) || candi < 1 || candi > 10) {
     return false;
   } else {
     return true;
